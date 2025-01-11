@@ -1,7 +1,7 @@
 import random
 
 def guess_the_number():
-    print("Welcome to the 'Guess the Number' game!")
+    print("\nWelcome to the 'Guess the Number' game!")
     print("I'm thinking of a number between 1 and 100.")
     print("Try to guess it in as few attempts as possible.\n")
 
@@ -21,14 +21,38 @@ def guess_the_number():
             elif guess > number_to_guess:
                 print("Too high! Try again.")
             else:
-                print(f"Congratulations! You guessed the number in {attempts} attempts.")
+                print(f"🎉 Congratulations! You guessed the number in {attempts} attempts.")
                 guessed_correctly = True
 
         except ValueError:
-            print("Please enter a valid number!")
+            print("⚠️ Please enter a valid number!")
+
+def main_menu():
+    while True:
+        print("\n========== Main Menu ==========")
+        print("1. Play 'Guess the Number'")
+        print("2. Instructions")
+        print("3. Exit")
+        print("================================")
+
+        try:
+            choice = int(input("Enter your choice (1-3): "))
+
+            if choice == 1:
+                guess_the_number()
+            elif choice == 2:
+                print("\n🔍 **Instructions**")
+                print("1. The game will generate a random number between 1 and 100.")
+                print("2. You must guess the number. After each guess, you'll be told if it's too high or too low.")
+                print("3. Keep guessing until you find the correct number!")
+                print("4. Try to guess in as few attempts as possible.\n")
+            elif choice == 3:
+                print("\nThank you for playing! Goodbye 👋")
+                break
+            else:
+                print("⚠️ Invalid choice! Please select an option between 1 and 3.")
+        except ValueError:
+            print("⚠️ Please enter a valid numeric option!")
 
 if __name__ == "__main__":
-    guess_the_number()
-
-
-#Run the ne application.
+    main_menu()
