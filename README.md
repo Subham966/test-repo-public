@@ -2,6 +2,15 @@
 
 
 
+# **Git Workflow and Pre-Commit Hooks Setup**
+
+This document outlines the steps to initialize a Git repository, set up pre-commit hooks for linting, and enforce best practices like checking for secrets in commits and running linters for various file types.
+
+## **Git Workflow**
+
+### **Initialize Git Repository**
+
+```bash
 git init
 git add .
 git commit -m "Your commit message"
@@ -10,44 +19,48 @@ git remote set-url origin https://github.com/Subham966/call-booking-application-
 git remote -v
 git branch -M main
 git push -u origin main
+```
 
-
+```bash
 git fetch
 git pull origin --rebase
+```
 
 
-#Token with push file:
+#**Token with push file:**
+```bash
 
 Create a Token:- Developer -> Personal access tokens (classic) -> Copy token :  gOAEtrtyrt4567RFwAO17iAwoIY84k0nZ8QE
 
 git remote set-url origin https://gOAEtrtyrt4567RFwAO17iAwoIY84k0nZ8QE@github.com/Subham966/test-repo-public.git
 
 git push origin master
+```
 
+#**To create new branch:**
 
-#To create new branch:
-=========================
 git branch dev
 git push origin dev
 
 
+#**untrack-> git add . -> stage -> git commit -> tracked**
 
-===========================================================
-untrack-> git add . -> stage -> git commit -> tracked
-===========================================================
 
-Pre-Commit-Hooks: (Before commit git will suggest the missing/wrong syntex)
----------------------
+
+#**-Commit-Hooks: (Before commit git will suggest the missing/wrong syntex)**
+```bash
+
 ls -a
 cd .git/
 ls -a
 cd hooks
 
 vi pre-commit
+```
 
 
 vscode:
----------------
+
 file.exclude
 delete **/.git
 
